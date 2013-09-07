@@ -1,0 +1,41 @@
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+-------------------Shell 1-------------------
+$ ./a.out 
+catching SIGUSR1 
+ignoring SIGUSR2 
+setting SIGINT to default 
+ 
+int sigusr: 
+SIGUSR1 
+SIGUSR1 received 
+ 
+ 
+-------------------Shell 2-------------------
+tomxue@ubuntu:~$ kill -USR1 5843
+bash: kill: (5843) - No such process
+tomxue@ubuntu:~$ ps aux | grep a.out
+tomxue    5860  0.0  0.0   2004   280 pts/2    S+   17:49   0:00 ./a.out
+tomxue    5863  0.0  0.0   5808   836 pts/1    S+   17:49   0:00 grep --color=auto a.out
+tomxue@ubuntu:~$ kill -USR1 5860
+tomxue@ubuntu:~$ kill -USR2 5860
+tomxue@ubuntu:~$ 
